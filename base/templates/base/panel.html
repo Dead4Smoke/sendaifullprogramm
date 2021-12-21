@@ -1,0 +1,141 @@
+{% extends 'base/base.html' %}
+{% block body %}
+{% if table %}
+<h3 style="text-align: center; margin-top: 48px; font-style: italic;">Отчеты</h3>
+        <div class="oblozhka">
+            <div style="margin-top: 5%;text-align: center;">
+                <table border="1" style="margin-left: 85px; background-color: #f0f0f0;" width="90%" cellpadding="5">
+                    <div class="block-body-user">
+                    </div>
+                    <tbody>                  
+                        <tr>
+                            <th rowspan="2">Блок A</th>
+                            <th>A1</th>
+                            <th>A2</th>
+                        </tr>
+                        <tr>
+                            <td> {{ table.A1 }} </td>
+                            <td> {{ table.A2 }}  </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Блок B</th>
+                            <th>B1</th>
+                            <th>B2</th>
+                            <th>B3</th>
+                            <th>B3a</th>
+                            <th>B4</th>
+                            <th>B4a</th>
+                        </tr>
+                        <tr>
+                            <td> {{ table.B1 }} </td>
+                            <td> {{ table.B2 }} </td>
+                            <td> {{ table.B3 }} </td>
+                            <td> {{ table.B3a }} </td>
+                            <td> {{ table.B4 }} </td>
+                            <td> {{ table.B4a }} </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Блок C</th>
+                            <th>C1</th>
+                            <th>C2</th>
+                            <th>C3</th>
+                            <th>C4</th>
+                            <th>C5</th>
+                            <th>C6</th>
+                        </tr>
+                        <tr>
+                            <td> {{ table.C1 }} </td>
+                            <td> {{ table.C2 }} </td>
+                            <td> {{ table.C3 }} </td>
+                            <td> {{ table.C4 }} </td>
+                            <td> {{ table.C5 }} </td>
+                            <td> {{ table.C6 }} </td>
+                        </tr>           
+                        <tr>
+                            <th rowspan="2">Блок G</th> 
+                            <th>G3</th>
+                            <th>G4</th>
+                            <th>G5</th>
+                            <th>G6a</th>
+                            <th>G6a1</th>
+                            <th>G6a2</th>
+                        </tr>
+                        <tr>
+                            <td> {{ table.G3 }} </td>
+                            <td> {{ table.G4 }} </td>
+                            <td> {{ table.G5 }} </td>
+                            <td> {{ table.G6a }} </td>
+                            <td> {{ table.G6a1 }} </td>
+                            <td> {{ table.G6a2 }} </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Блок E-1</th>
+                            <th>E-1</th>
+                            <th>E-2</th>
+                            <th>E-3</th>
+                            <th>E-4</th>
+                            <th>E-5</th>
+                            <th>E-6</th>
+                            <th>E-7</th>
+                            <th>E-8</th>
+                            <th>E-9</th>
+                            <th>E-10</th>
+                        </tr>
+                        <tr>
+                            <td> {{ table.E10 }} </td>
+                            <td> {{ table.E11 }} </td>
+                            <td> {{ table.E12 }} </td>
+                            <td> {{ table.E13 }} </td>
+                            <td> {{ table.E14 }} </td>
+                            <td> {{ table.E15 }} </td>
+                            <td> {{ table.E16 }} </td>
+                            <td> {{ table.E17 }} </td>
+                            <td> {{ table.E18 }} </td>
+                            <td> {{ table.E19 }} </td>                       
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Блок E-2</th>
+                            <th>E-2.1</th>
+                            <th>E-2.2</th>
+                            <th>E-2.3</th>
+                            <th>E-2.4</th>
+                            <th>E-2.5</th>
+                            <th>E-2.6</th>
+                            <th>E-2.7</th>
+                            <th>E-2.8</th>
+                            <th>E-2.9</th>
+                            <th>E-2.10</th>
+                        </tr>
+                        <tr>
+                            <td> {{ table.E20 }} </td>
+                            <td> {{ table.E21 }} </td>
+                            <td> {{ table.E22 }} </td>
+                            <td> {{ table.E23 }} </td>
+                            <td> {{ table.E24 }} </td>
+                            <td> {{ table.E25 }} </td>
+                            <td> {{ table.E26 }} </td>
+                            <td> {{ table.E27 }} </td>
+                            <td> {{ table.E28 }} </td>
+                            <td> {{ table.E29 }} </td>
+                        </tr>
+                    </tbody>
+                </table> 
+                <br>
+            </div>
+        </div>  
+{% else %} 
+
+<div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+</div>      
+
+{% endif %}
+      
+{% endblock %}

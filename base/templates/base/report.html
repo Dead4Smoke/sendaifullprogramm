@@ -1,0 +1,389 @@
+{% extends 'base/base.html' %}
+{% block body %}
+<h3 style="text-align: center; margin-top: 48px; font-style: italic;">Общий отчет о заполнении форм</h3>
+<div class="Reportwrapper" >
+    <div class="PoleWrap">
+        <div class="ReportPole a" id='a'>
+            <div class="ReportMenu">
+                <div class="ReportClass">
+                    <p style="font-weight: bold; font-size: 20px;">Блок А</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >A1</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >A2 </p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepA1.A1__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepA2.A2__sum  }}</p>
+                </div>
+            </div>
+        </div> 
+            <br>
+        <div class="ReportPole b" id='b'>
+            <div class="ReportMenu">
+                <div class="ReportClass">
+                    <p style="font-weight: bold; font-size: 20px;">Блок Б</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >B1</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >B2</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepB1.B1__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepB2.B2__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >B3</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >B3a</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepB3.B3__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepB4.B3a__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >B4</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >B4a</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepB5.B4__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepB6.B4a__sum  }}</p>
+                </div>
+            </div>
+        </div>
+            <br>
+        <div class="ReportPole b" id='c'>
+            
+            <div class="ReportMenu">
+                <div class="ReportClass">
+                    <p style="font-weight: bold; font-size: 20px;">Блок C</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C1</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C2</p>
+                </div>
+            </div>
+
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC1.C1__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC2.C2__sum  }}</p>
+                </div>
+            </div>
+
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C3</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C4</p>
+                </div>
+            </div>
+
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC3.C3__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC4.C4__sum  }}</p>
+                </div>
+            </div>
+
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C5</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C6</p>
+                </div>
+            </div>
+
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC5.C5__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC6.C6__sum  }}</p>
+                </div>
+            </div>
+
+        </div>
+            <br>
+        <div class="ReportPole b" id='g'>
+            <div class="ReportMenu">
+                <div class="ReportClass">
+                    <p style="font-weight: bold; font-size: 20px;">Блок G</p>
+                </div>
+            </div>
+
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >G3</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >C4</p>
+                </div>
+            </div>
+
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepG3.G3__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepC4.C4__sum  }}</p>
+                </div>
+            </div>
+
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >G5</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >G6</p>
+                </div>
+            </div>
+
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepG5.G5__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepG6.G6a__sum  }}</p>
+                </div>
+            </div>
+
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >G6a</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >G6b</p>
+                </div>
+            </div>
+
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepG7.G6a1__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepG8.G6a2__sum  }}</p>
+                </div>
+            </div>
+
+        </div>
+            <br>
+        <div class="ReportPole" id='e1'>
+            <div class="ReportMenu">
+                <div class="ReportClass">
+                    <p style="font-weight: bold; font-size: 20px;">Блок E-1</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-1</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE10.E10__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE11.E11__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-3</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-4</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE12.E12__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE13.E13__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-5</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-6</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE14.E14__sum  }}</p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE15.E15__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-7</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-8</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE16.E16__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE17.E17__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-9</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-10</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE18.E18__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE19.E19__sum  }}</p>
+                </div>
+            </div>
+        </div>
+            <br>
+        <div class="ReportPole" id='e2'>
+            <div class="ReportMenu">
+                <div class="ReportClass">
+                    <p style="font-weight: bold; font-size: 20px;">Блок E-2</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.1</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.2</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE20.E20__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE21.E21__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.3</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.4</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE22.E22__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE23.E23__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.5</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.6</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE24.E24__sum  }}</p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE25.E25__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.7</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.8</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE26.E26__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE27.E27__sum  }}</p>
+                </div>
+            </div>
+            <div class="ReportAnswers">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.9</p>   
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px; font-weight: bold;" >E-2.10</p>
+                </div>
+            </div>
+            <div class="Reportlast">
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE28.E28__sum  }} </p>  
+                </div>
+                <div class="ReportAns">
+                    <p style="margin: 2px !important; padding: 5px;" >{{  RepE29.E29__sum  }}</p>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>     
+{% endblock %}

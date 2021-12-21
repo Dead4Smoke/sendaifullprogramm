@@ -1,0 +1,238 @@
+{% extends 'base/base.html' %}
+{% block body %}
+<h3 style="text-align: center; margin-top: 48px; font-style: italic;">Мониторинг показателей Сендайской рамочной программы</h3>
+<form method="POST" class="needs-validation">  
+{% csrf_token %}
+  <div class="container" style="margin-top: 20px; text-align: center;">
+      <div>
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+              {% endfor %}
+          </ul>
+          {% endif %}
+          <br>
+      </div> 
+      {% if is_exist %}        
+          <h1 style=" margin-top: 5%;">Ваши данные отправлены</h1>
+      {% else %}                
+      <div class="col-md-8 order-md-1"  style="max-width: 100%;">    
+          <div class="tabs">
+            <input type="radio" name="tab-btn" id="tab-btn-1" value="" >
+            <label for="tab-btn-1">Блок A</label>
+            <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+            <label for="tab-btn-2">Блок B</label>
+            <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+            <label for="tab-btn-3">Блок C</label>
+            <input type="radio" name="tab-btn" id="tab-btn-4" value="">
+            <label for="tab-btn-4">Блок G</label>
+            <input type="radio" name="tab-btn" id="tab-btn-5" value="">
+            <label for="tab-btn-5">Блок E-1</label>
+            <input type="radio" name="tab-btn" id="tab-btn-6" value="">
+            <label for="tab-btn-6">Блок E-2</label>
+
+            <div id="content-1">
+              <h5>Блок A</h5>
+              <h5 class="mb-3" style="text-align: center;">Введите показатели:</h5> 
+                  <!-- <label class="mg"><span style="font-weight: bold;">A1 </span>Число погибших в результате ЧС на 100 000 человек:</label>
+                  {{ form.A1 }} -->
+                  <label class="mg"><span style="font-weight: bold;">A2 </span>Число погибших в результате ЧС:</label>
+                  {{ form.A2 }}
+                  <label class="mg"><span style="font-weight: bold;">A3 </span>Число пострадавших в результате ЧС:</label>
+                  {{ form.A3 }}        
+            </div>
+
+            <div id="content-2">
+              <h5>Блок B</h5>
+              <h5 class="mb-3" style="text-align: center;">Введите показатели:</h5> 
+                  <!-- <label class="mg"><span style="font-weight: bold;">B1 </span>Число непосредственно пострадавших в результате ЧС на 100 000 человек:</label>
+                  {{ form.B1 }}
+                  <label class="mg"><span style="font-weight: bold;">B2 </span>Число получивших увечья или пострадавших от болезней в результате ЧС на 100 000 человек:</label>
+                  {{ form.B2 }} -->
+                  <label class="mg"><span style="font-weight: bold;">B3 </span>Число людей, жилища котоsрых были повреждены в результате ЧС:</label>
+                  {{ form.B3 }}
+                  <label class="mg"><span style="font-weight: bold;">B3a </span>Число жилищ/домов, которые были повреждены в результате ЧС:</label>
+                  {{ form.B3a }}
+                  <label class="mg"><span style="font-weight: bold;">B4 </span>Число людей, жилища которых были уничтожены в результате ЧС:</label>
+                  {{ form.B4 }}
+                  <label class="mg"><span style="font-weight: bold;">B4a </span>Число жилищ/домов, которые были уничтожены в результате ЧС:</label>
+                  {{ form.B4a }}                  
+            </div>
+
+            <div id="content-3">
+              <h5>Блок C</h5>
+              <h5 class="mb-3" style="text-align: center;">Введите показатели:</h5>                 
+              <!-- <label class="mg"><span style="font-weight: bold;">C1 </span>Прямые экономические потери, связанные с ЧС в отношении регионального валового внутреннего продукта (составной показатель):</label>
+                  {{ form.C1 }} -->
+                  <label class="mg"><span style="font-weight: bold;">C2 </span>Прямые потери в сельском хозяйстве, связанные с ЧС:</label>
+                  {{ form.C2 }}
+                  <label class="mg"><span style="font-weight: bold;">C3 </span>Прямые экономические потери всех других поврежденных или разрушенных производственных активов, связанных с ЧС:</label>
+                  {{ form.C3 }}
+                  <label class="mg"><span style="font-weight: bold;">C4 </span>Прямые экономические потери в жилищном секторе, связанные с ЧС:</label>
+                  {{ form.C4 }}
+                  <label class="mg"><span style="font-weight: bold;">C5 </span>Прямые экономические потери в результате повреждения или разрушения учереждений здравоохранения и образования в результате ЧС:</label>
+                  {{ form.C5 }}
+                  <label class="mg"><span style="font-weight: bold;">C6 </span>Прямые экономические потери в связи с повреждением или разрушением культурного наследия в результате ЧС:</label>
+                  {{ form.C6 }}
+            </div>
+
+            <div id="content-4">
+              <h5>Блок G</h5>
+              <h5 class="mb-3" style="text-align: center;">Введите примерные показатели данных:</h5>                 
+                  <label class="mg"><span style="font-weight: bold;">G4 </span>Доля местных органов власти, имеющих план действий в области раннего оповещения:</label>
+                  {{ form.G4 }}
+                  <label class="mg"><span style="font-weight: bold;">G5 </span>Процент населения получающяя доступную, понятную, практическую и значимую информацию и оценки, касающиеся риска ЧС, на национальном и местном уровне:</label>
+                  {{ form.G5 }}
+                  <!-- <label class="mg"><span style="font-weight: bold;">G6a </span>Доля населения, подверженного угрозе или риску ЧС, защита которого обеспечивается путем заблаговременной эвакуации на основе раннего оповещения:</label>
+                  {{ form.G6a }} -->
+                  <label class="mg"><span style="font-weight: bold;">G6a1 </span>Число людей, защита которого обеспечивается путем заблаговременной эвакуации на основе экстренного оповещения:</label>
+                  {{ form.G6a1 }}
+                  <label class="mg"><span style="font-weight: bold;">G6a2 </span>Численность населения, проживающего в зоне экстренного оповещения:</label>
+                  {{ form.G6a2 }}
+            </div>     
+
+            <div id="content-5">
+              <h5>Блок E</h5>
+              <div class="Etext">
+                <h8 class="mb-3" style="text-align: center;font-weight: 400;"><span style="font-weight: bold;">E-1</span>. Число стран, которые принимают и осуществляют национальные стратегии снижения риска бедствий в соответствии с Сендайской рамочной программой для снижения риска бедствий на 2015-2030 г.</h8>
+                <br>
+                <h8 class="mb-3" style="text-align: center;font-weight: bold;">Оцените достижения вашей страны в реализации национальной стратегии по снижению риска бедствий, на основе 10 ключевых требований, указанных ниже. (0 - нет достижений, 10 - значительные достижения)</h8>
+                <br> 
+              </div>
+              <div class="Etable">
+                <br>
+                <table border="1" border-radius="10px" style="width: 100%;">
+                  <tr>
+                    <th>#</th>
+                    <th>ОСНОВНЫЕ ТРЕБОВАНИЯ</th>
+                    <th style="width: 10%;">ГОД</th>
+                    <th style="width: 12%;">ДИАПАЗОН</th>
+                    <th>РЕЗУЛЬТАТ</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Есть временные рамки, целевые задачи и индикаторы:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E10 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td >2017</td><td>0 - 1.00</td><td>{{ form.E11 }}</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Задачи и меры, направленные на предотвращение создания риска:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E12 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E13 }}</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Задачи и меры, направленные на снижение существующего риска:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E14 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E15 }}</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Задачи и меры, направленные на укрепление экономической, социальной, санитарной и экологической устойчивости:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E16 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E17 }}</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Рассмотрите рекомендации Приоритета 1, Понимание риска ЧС:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E18 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E19 }}</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Рассмотрите рекомендации Приоритета 2, Укрепление управления рисками стихийных бедствий для управления рисками бедствий:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E20 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E21 }}</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Рассмотрите рекомендации Приоритета 3, Инвестиции в снижение риска бедствий для обеспечения устойчивости:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E22 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E23 }}</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Удовлетворение рекомендаций Приоритета 4, Повышение готовности к стихийным бедствиям для эффективного реагирования и «Улучшение»</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E24 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E25 }}</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Содействовать обеспечению согласованности политики и её соблюдения, в частности, с Целями Устойчивого Развития и Парижским соглашением:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E26 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E27 }}</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>Имеются механизмы для последующей деятельности, периодически оценивать и публично сообщать о прогрессе:</td><td>2018</td><td>0 - 1.00</td><td>{{ form.E28 }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>2017</td><td>0 - 1.00</td><td>{{ form.E29 }}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div id="content-6">
+              <h5>Блок E-2</h5>
+              <div class="Etext">
+                <h8 class="mb-3" style="text-align: center;font-weight: 400;"><span style="font-weight: bold;">E-2</span>. Процентная доля местных органов власти, которые принимают и осуществляют местные стратегии снижения риска бедствий в соответствии с национальными стратегиями.</h8>
+                <br>
+                <h8 class="mb-3" style="text-align: center;font-weight: bold;">Следует представлять информацию о соответствующих уровнях государственного управления, отвечающих за снижение риска бедствий, под национальным уровнем.</h8>
+                <br> 
+              </div>
+              <br>
+              <label class="mg">Имеет цели и меры направленные на снижение существующего риска:</label>
+              {{ form.E30 }}
+              <label class="mg">Имеет цели и меры направленные на предотвращение появления риска задачи, индикаторы:</label>
+              {{ form.E31 }}
+              <label class="mg">Имеет цели и меры направленные на укрепление экономической, социальной, экологической устойчивости и устойчивости здравоохранения:</label>
+              {{ form.E32 }}
+              <label class="mg">Имеет временные рамки, цели и индикаторы:</label>
+              {{ form.E33 }}
+              <label class="mg">Выполняет рекомендации и предложения Приоритета 1 «Понимание риска ЧС» :</label>
+              {{ form.E34 }}
+              <label class="mg">Выполняет рекомендации и предложения Приоритета 2 «совершенствование организационно-правовых рамок управления риском ЧС»:</label>
+              {{ form.E35 }}
+              <label class="mg">Выполняет рекомендациии предложения Приоритета 3 «Инвестиции в меры по снижению риска ЧС в целях укрепления потенциала противодействия»:</label>
+              {{ form.E36 }}
+              <label class="mg">Выполняет рекомендации и предложения Приоритета 4 «Повышение готовности к бедствиям для обеспечения эффективного реагирования и внедрение принципа «сделать лучше, чем было» в деятельность по восстановлению, реабилитации и реконструкции» :</label>
+              {{ form.E37 }}
+              <label class="mg">Интегрирована на всех уровнях по развитию и планам и политике по искоренению бедности, в особенности ЦУР':</label>
+              {{ form.E38 }}
+              <label class="mg">Продвигает единение, интеграцию и соответствие планов адаптации к ИК и смягчения его последствий, в соответствии с Парижским :</label>
+              {{ form.E39 }}
+            </div>
+
+          </div>
+            <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Отправить на проверку для внесения в базу данных</button>
+            </hr>                          
+      </div>
+  </div>   
+</form> 
+{% endif %}  
+{% endblock %}
+
+  

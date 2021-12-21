@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block body %}
+<h3 style="text-align: center; margin-top: 5%; font-style: italic;">Мониторинг показателей Сендайской рамочной программы</h3>
+<h3 style="text-align: center;  font-style: italic;">Добро пожаловать на наш сайт введите данные своей области</h3>
+<form method="post" action="" enctype="multipart/form-data">
+  {% if is_exist %}        
+      <h1 style="margin-left: 35%; margin-top: 5%;">Ваши данные отправлены</h1>
+      <br>
+      
+{% else %}
+    <div class="metadate">
+      <div class="date" >
+            {% csrf_token %}
+            <p>
+                <label for="id_oblast">Регион:</label>
+                {{ form.region }}
+              </p>
+              <p>
+                <label for="id_vvr">ВРП:</label>
+                {{ form.vrp }}
+              </p>
+              <p>
+                <label for="id_people">Численность населения:</label>
+                {{ form.people }}
+              </p>
+              <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Сохранить</button>
+              </hr> 
+      </div>
+    </div>         
+</form>
+{% endif %}  
+{% endblock%}

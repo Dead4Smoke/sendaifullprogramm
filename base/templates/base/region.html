@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block body %}
+        <div class="searchdiv">
+        <h3 style="text-align: center; margin-top: 48px; font-style: italic;">Выберите регион</h3>
+            <form id="searchform" action="{% url 'search' %}" method="get" >
+                <div class="shadow">{{ region.form.region }}</div>
+                <button class="searchbat">Показать</button>
+            </form>
+        </div>      
+{% endblock %}

@@ -1,0 +1,77 @@
+.metadate{
+    width: 100%;
+    margin-top: 5% ;
+}
+
+.date{
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.lb{
+    font-weight: 800;
+    font-size: 14px;
+    color: #0160A4;
+}
+
+.Reportwrapper{
+    width: 100%;
+}
+
+.PoleWrap{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 2%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 25px;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);   
+}
+
+.ReportPole{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.a{
+    width: 30% !important;
+    margin-left: 35% !important;
+}
+
+.b{
+    width: 70% !important;
+    margin-left: 15% !important;
+    
+}
+
+.ReportMenu{
+    text-align: center;
+    box-shadow: inset -1px 0 red;
+    width: 50%;
+}
+
+.ReportAnswers{
+    width: 35%;
+    text-align: center;
+}
+
+.Reportlast{
+    text-align: left;
+    width: 30%;
+}
+
+.ReportClass{
+    text-align: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,76 @@
+{% load static %}
+{% load zz %}
+
+<!doctype html>
+<html lang="ru">
+  
+<head>
+  <meta charset="utf-8">
+  <title>Мониторинг показателей Сендайской рамочной программы</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+  <link rel="stylesheet" href="{% static 'base/css/style.css'%}">
+  <link rel="stylesheet" href="{% static 'base/css/tab.css'%}">
+  <link rel="stylesheet" href="{% static 'base/css/reg.css'%}">
+  <link rel="stylesheet" href="{% static 'base/css/metadate.css'%}">
+  <link rel="stylesheet" href="{% static 'base/css/search.css'%}">
+  <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'base/css/font-awesome.min.css'%}">
+</head>
+
+<header>
+  <div class="menu_top">
+    <div class="header">
+      <div class="headerpic">
+        <img src="{% static 'base/img/logo.jpg' %}" style="height: 150px; float: right; margin-top: 10px;"> 
+      </div>
+      <div class="bad">
+        <p style="margin-top: 25px; margin-left: 20px; margin-bottom: 1px;"><h9>Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования Академия гражданской защиты МЧС России</h9></p>
+        <h8>Научно-исследоватеский центр</h8>          
+      </div>  
+      {% if request.user.is_authenticated %}
+      <div class="user_field">
+  
+        <label class="lb" for="id_oblast">Ваш регион:</label>                         
+        <h8 style="margin-left: 0px !important;">{{ request.user.id|region }}</h8> 
+   
+        <label class="lb" for="id_vvr">ВРП:</label>              
+        <h8 style="margin-left: 0px !important;">{{ request.user.id|vrp }}</h8>
+
+        <label class="lb" for="id_people">Численность населения:</label>
+        <h8 style="margin-left: 0px !important;">{{ request.user.id|people }}</h8>                     
+      </div>            
+      {%  if request.user.is_staff %}
+      <div class="report">
+        <a href="{% url 'report' %}" class="bott">Общий отчет для отправки</a>
+        <a href="/admin" class="bott">Администрационная панель</a> 
+        <a href="{% url 'region' %}" class="bott">Проверка Регионов</a>
+      </div>
+      {% endif %}
+    </div>
+    <nav class="top-menu">
+      <ul class="menu-main">
+          <li class="left-item"><a href="{% url 'main' %}">Личный кабинет</a></li>
+          <li class="left-item"><a href="{% url 'start' %}">Область</a></li>
+          <li class="right-item"><a href="{% url 'logout' %}">Выход из аккаунта</a></li>
+          <li class="right-item"><a href="{% url 'panel' %}">Отчет о заполнении</a></li>   
+      </ul>
+      <a class="navbar-logo" href="{% url 'start' %}"><img src="{% static 'base/img/rose.png' %}" style="height: 150px;" ></a>   
+    </nav> 
+      {% else %}
+      <div class="user_reg"> 
+        <a href="{% url 'signin' %}" class="button user_reg2">Войти</a>
+        <a href="{% url 'register' %}" class="button user_reg2">Регистрация</a>
+      </div>        
+  </div>
+  {% endif %} 
+</header>
+
+<body>   
+  {% block body %}
+  {% endblock %}
+</body>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2021 АГЗ МЧС России</p>
+</footer>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% block body %}
+  <div class="container" style="margin-top: 20px; text-align: center; width: 35%;">
+    <div class="col-md-8 order-md-1"  style="max-width: 100%;">
+      <h4 class="mb-3" style="text-align: center;">Мониторинг показателей Сендайской рамочной программы</h4>
+      <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+         <p>
+           <label for="id_username" >Логин:</label>
+          {{ form.username }} 
+        </p>
+        <p>
+          <label for="id_password" >Пароль:</label>
+          {{ form.password1 }} 
+        </p>
+        <p>
+          <label for="id_password" >Подтверждение пароля:</label>
+          {{ form.password2 }}  
+        </p>                  
+      <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Зарегистрироваться</button>
+      </hr>
+      </form>
+        <div>
+          {% if messages %}       
+            <ul class="messages">
+                {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                {% endfor %}
+            </ul>
+          {% endif %}   
+        </div> 
+    </div>
+  </div>
+{% endblock %}
